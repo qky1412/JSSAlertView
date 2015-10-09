@@ -206,7 +206,7 @@ class JSSAlertView: UIViewController {
         
         // position text
         if self.textView != nil {
-            let textString = textView.text! as NSString
+            let textString = textView.attributedText.string as NSString
             let textAttr = [NSFontAttributeName:textView.font as! AnyObject]
             let realSize = textView.sizeThatFits(CGSizeMake(contentWidth, CGFloat.max))
             let textSize = CGSize(width: contentWidth, height: CGFloat(fmaxf(Float(90.0), Float(realSize.height))))
@@ -354,14 +354,16 @@ class JSSAlertView: UIViewController {
             textView.backgroundColor = UIColor.clearColor()
             textView.text = text
             //add by qky for line height
-            let attributedStr = NSMutableAttributedString(string: text)
-            let style = NSMutableParagraphStyle()
-            style.lineHeightMultiple = 1.3
-            style.lineBreakMode = NSLineBreakMode.ByTruncatingTail
-            style.alignment = .Center
-            attributedStr.addAttribute(NSFontAttributeName, value: UIFont(name: titleLabel.font.fontName, size: 15.0)!, range: NSMakeRange(0, text.characters.count))
-            attributedStr.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, text.characters.count))
-            textView.attributedText = attributedStr
+            
+//            let attributedStr = NSMutableAttributedString(string: text)
+//            let style = NSMutableParagraphStyle()
+//            style.lineHeightMultiple = 0.8
+//            style.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+//            style.alignment = .Center
+//            
+//            attributedStr.addAttribute(NSFontAttributeName, value: UIFont(name: titleLabel.font.fontName, size: 15.0)!, range: NSMakeRange(0, text.characters.count))
+//            attributedStr.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, text.characters.count))
+//            textView.attributedText = attributedStr
             //add end
             self.containerView.addSubview(textView)
         }
