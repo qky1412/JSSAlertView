@@ -58,10 +58,10 @@ class JSSAlertView: UIViewController {
         case Close, Cancel
     }
     
-    let baseHeight:CGFloat = 160.0
+    let baseHeight:CGFloat = 200.0
     var alertWidth:CGFloat = 290.0
     let buttonHeight:CGFloat = 49.0
-    let padding:CGFloat = 20.0
+    let padding:CGFloat = 30.0
     
     var viewWidth:CGFloat?
     var viewHeight:CGFloat?

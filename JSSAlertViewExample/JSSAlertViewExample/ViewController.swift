@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 //        alertview.setTitleFont("ClearSans-Light")
 //        alertview.setTextFont("ClearSans")
 //        alertview.setButtonFont("ClearSans-Bold")
-        JSSAlertView().lingerAlert(self, title: " ", text: "this is content", buttonText: "ok", cancelButtonText: "cancel")
+        JSSAlertView().lingerAlert(self, title: "this is title", text: "this is content", buttonText: "ok", cancelButtonText: "cancel")
     }
     
     @IBAction func infoAlertButtonPress() {
