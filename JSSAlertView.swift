@@ -353,6 +353,16 @@ class JSSAlertView: UIViewController {
             textView.font = UIFont(name: titleLabel.font.fontName, size: 15)
             textView.backgroundColor = UIColor.clearColor()
             textView.text = text
+            //add by qky for line height
+            let attributedStr = NSMutableAttributedString(string: text)
+            let style = NSMutableParagraphStyle()
+            style.lineHeightMultiple = 1.3
+            style.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+            style.alignment = .Center
+            attributedStr.addAttribute(NSFontAttributeName, value: UIFont(name: titleLabel.font.fontName, size: 15.0)!, range: NSMakeRange(0, text.characters.count))
+            attributedStr.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, text.characters.count))
+            textView.attributedText = attributedStr
+            //add end
             self.containerView.addSubview(textView)
         }
         
